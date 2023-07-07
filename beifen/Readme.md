@@ -32,15 +32,13 @@ Vue.use(VueEleProtable);
 必传       tableData       table的数据
           formProps       form的所有属性 attrs都可写入
           tableProps      table的所有属性 attrs都可写入
-必传总页数  paginationProps pagination的所有属性 attrs都可写入 
+必传总页数  paginationProps pagination的所有属性 attrs都可写入 ， 至少传入，其余不必须！！！！！！！！！！！！！！！！！！
           toolbar         工具栏渲染
 必传       v-model         绑定搜索栏的数据对象
 必传       @onSearch       抛出重置及搜索按钮事件
           loading         传入boolean，判断是否为数据获取中（调接口）
-          customTable     传入回调函数(Node, tableProps, tableColumns) => { return Node }，可实现完全自定义table，
-                          Node为本身组件  table节点
-          @******         el-table自带的所有事件都可以透传获取执行, 查看element-ui 
-                          Table Events https://element.eleme.cn/#/zh-CN/component/table#table-events
+          customTable     传入回调函数(Node, tableProps, tableColumns) => { return Node }，可实现完全自定义table，Node为本身组件table节点
+          @******         el-table自带的所有事件都可以透传获取执行 , 查看element-ui Table Events : [Title](https://element.eleme.cn/#/zh-CN/component/table)
       -->
     <vue-ele-protable
       protableRef="protableRef" 
@@ -158,15 +156,13 @@ export default {
 
 ```
 ## 预览效果
-```image
-![Alt text](image.png)
-```
+ ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
 
 ## 表格配置
 
 ### 具体参数可查看element-ui ，下方罗列部分
-    table: Table Attributes https://element.eleme.cn/#/zh-CN/component/table#table-attributes
-    form:  Form Attributes  https://element.eleme.cn/#/zh-CN/component/form#form-attributes
+    table: Table Attributes [Title](https://element.eleme.cn/#/zh-CN/component/table#table-attributes)
+    form:  Form Attributes  [Title](https://element.eleme.cn/#/zh-CN/component/form#form-attributes)
 
 
 | 参数      | 说明                                                                                        | 类型                   | 可选值                 | 默认值 |

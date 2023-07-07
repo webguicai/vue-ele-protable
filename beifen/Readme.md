@@ -160,14 +160,16 @@ export default {
 
 ```
 ## 预览效果
+https://raw.githubusercontent.com/webguicai/vue-ele-protable/main/beifen/image.png
 
- ![image](![https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg](https://raw.githubusercontent.com/webguicai/vue-ele-protable/main/beifen/image.png))
+![image](https://raw.githubusercontent.com/webguicai/vue-ele-protable/main/beifen/image.png)
+
 
 ## 表格配置
 
 ### 具体参数可查看element-ui ，下方罗列部分
-    table: Table Attributes [Title](https://element.eleme.cn/#/zh-CN/component/table#table-attributes)
-    form:  Form Attributes  [Title](https://element.eleme.cn/#/zh-CN/component/form#form-attributes)
+    table: Table Attributes https://element.eleme.cn/#/zh-CN/component/table#table-attributes
+    form:  Form Attributes  https://element.eleme.cn/#/zh-CN/component/form#form-attributes
 
 
 | 参数      | 说明                                                                                        | 类型                   | 可选值                 | 默认值 |

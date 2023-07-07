@@ -1,6 +1,6 @@
 {
   "name": "vue-ele-protable",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "vue2 + element-ui,类似 antd procomponents 中的 Protable",
   "main": "vueProtable.common.js",
   "scripts": {

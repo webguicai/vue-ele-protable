@@ -156,9 +156,7 @@ export default {
 
 ```
 ## 预览效果
-```image
-![Alt text](image.png)
-```
+ ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
 
 ## 表格配置
 

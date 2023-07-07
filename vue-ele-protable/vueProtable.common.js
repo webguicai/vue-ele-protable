@@ -11432,11 +11432,8 @@ var component = normalizeComponent(
         }
       }
     }, ["\u91CD\u7F6E"]), h("el-button", {
-      "directives": [{
-        name: "loading",
-        value: this.loading
-      }],
       "attrs": {
+        "loading": this.loading,
         "type": "primary"
       },
       "on": {
@@ -11451,10 +11448,10 @@ var component = normalizeComponent(
 });
 ;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue?vue&type=script&lang=js&
  /* harmony default export */ var vueProtable_proFormvue_type_script_lang_js_ = (proFormvue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proForm.vue?vue&type=style&index=0&id=84e3204a&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proForm.vue?vue&type=style&index=0&id=f039b538&prod&lang=scss&scoped=true&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue?vue&type=style&index=0&id=84e3204a&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue?vue&type=style&index=0&id=f039b538&prod&lang=scss&scoped=true&
 
 ;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue
 var proForm_render, proForm_staticRenderFns
@@ -11471,7 +11468,7 @@ var proForm_component = normalizeComponent(
   proForm_staticRenderFns,
   false,
   null,
-  "84e3204a",
+  "f039b538",
   null
   
 )

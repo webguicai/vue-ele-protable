@@ -65,7 +65,7 @@ export default {
                   重置
                 </el-button>,
                 <el-button
-                  v-loading={this.loading}
+                  loading={this.loading}
                   type="primary"
                   onClick={() => {
                     this.formProps?.onSearch();

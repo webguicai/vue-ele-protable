@@ -11376,13 +11376,16 @@ var component = normalizeComponent(
     proFormData: {
       default: () => {},
       required: true
+    },
+    proFormRef: {
+      default: ''
     }
   },
   data() {
     return {};
   },
   mounted() {
-    this.$parent.searchRef = this.$refs.elForm;
+    this.$parent[proFormRef] = this.$refs.elForm;
   },
   render() {
     const h = arguments[0];
@@ -11427,7 +11430,7 @@ var component = normalizeComponent(
       }
     }), h("el-form-item", {
       "class": "formBtns"
-    }, [(this.formProps?.slots || []).length > 0 ? this.formProps?.slots?.map(item => item) : [h("el-button", {
+    }, [(this.formProps?.renderBtns || []).length > 0 ? this.formProps?.renderBtns?.map(item => item) : [h("el-button", {
       "on": {
         "click": () => {
           this.$refs.elForm.resetFields();
@@ -11450,10 +11453,10 @@ var component = normalizeComponent(
 });
 ;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue?vue&type=script&lang=js&
  /* harmony default export */ var vueProtable_proFormvue_type_script_lang_js_ = (proFormvue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proForm.vue?vue&type=style&index=0&id=7771a0c8&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proForm.vue?vue&type=style&index=0&id=8e4cbddc&prod&lang=scss&scoped=true&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue?vue&type=style&index=0&id=7771a0c8&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue?vue&type=style&index=0&id=8e4cbddc&prod&lang=scss&scoped=true&
 
 ;// CONCATENATED MODULE: ./src/vueProtable/proForm.vue
 var proForm_render, proForm_staticRenderFns
@@ -11470,7 +11473,7 @@ var proForm_component = normalizeComponent(
   proForm_staticRenderFns,
   false,
   null,
-  "7771a0c8",
+  "8e4cbddc",
   null
   
 )
@@ -11511,7 +11514,11 @@ var lodash = __webpack_require__(6810);
       required: true
     },
     // 绑定form数据
-    protableRef: {
+    proTableRef: {
+      default: ""
+    },
+    // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
+    proFormRef: {
       default: ""
     },
     // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
@@ -11556,8 +11563,17 @@ var lodash = __webpack_require__(6810);
       pagination: {
         pageSize: 20,
         currentPage: 1
-      }
+      },
+      proTableFormRef: {}
     };
+  },
+  watch: {
+    proTableFormRef: {
+      deep: true,
+      handler: function (newVal) {
+        this.$parent[this.proFormRef] = newVal;
+      }
+    }
   },
   mounted() {
     const proFormDataInit = {};
@@ -11630,7 +11646,8 @@ var lodash = __webpack_require__(6810);
           onReset: this.onReset,
           ...this.formProps
         },
-        "proFormData": this.proFormData
+        "proFormData": this.proFormData,
+        "proFormRef": 'proTableFormRef'
       }
     }), h("div", {
       "class": "proTableOtherRenders"
@@ -11699,10 +11716,10 @@ var lodash = __webpack_require__(6810);
 });
 ;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue?vue&type=script&lang=js&
  /* harmony default export */ var vueProtable_proTablevue_type_script_lang_js_ = (proTablevue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proTable.vue?vue&type=style&index=0&id=00262a76&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proTable.vue?vue&type=style&index=0&id=29305190&prod&lang=scss&scoped=true&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue?vue&type=style&index=0&id=00262a76&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue?vue&type=style&index=0&id=29305190&prod&lang=scss&scoped=true&
 
 ;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue
 var proTable_render, proTable_staticRenderFns
@@ -11719,7 +11736,7 @@ var proTable_component = normalizeComponent(
   proTable_staticRenderFns,
   false,
   null,
-  "00262a76",
+  "29305190",
   null
   
 )

@@ -31,7 +31,8 @@ Vue.use(VueEleProtable);
 <template>
   <div class="examplePage">
       <!-- 
-          protableRef     绑定当前父组件data中的接受 ref 的键，传入string类型
+          proTableRef     绑定当前父组件data中的接受 ref 的键，传入string类型
+          proFormRef     绑定当前父组件data中的接受 ref 的键，传入string类型
 必传       tableColumns    table 及 form 的配置
 必传       tableData       table的数据
           formProps       form的所有属性 attrs都可写入
@@ -179,6 +180,8 @@ form:  Form Attributes
 | label     | 对应 el-table-column 的 label                                                               | string                 | -                      | -      |
 | type      | 对应 el-table-column 的 type                                                                | string                 | selection/index/expand | -      |
 | prop      | 对应 el-table-column 的 prop                                                                | string                 | -                      | -      |
+| render     | 自定义渲染 table 中每一行值                                                            | function (record) { return xxx }       | -      | -      |
+| renderItem     | 自定义渲染 form 中每一项                                                                | function () { return  node }        | -      | -      |
 | width     | 对应 el-table-column 的 width                                                               | string,number          | -                      | -      |
 | hideInSearch  | 是否在搜索栏中隐藏                                                                        | boolean                | -                      | false      |
 | hideInTable  | 是否在表格中隐藏                                                                        | boolean                | -                      | false      |

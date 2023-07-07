@@ -6,12 +6,13 @@ export default {
     labelWidth: { default: "144px" },
     formProps: { default: () => {} },
     proFormData: { default: () => {}, required: true },
+    proFormRef: { default: '' }
   },
   data() {
     return {};
   },
   mounted() {
-    this.$parent.searchRef = this.$refs.elForm;
+    this.$parent[proFormRef] = this.$refs.elForm;
   },
   render() {
     return (
@@ -51,8 +52,8 @@ export default {
           }
         })}
         <el-form-item class="formBtns">
-          {(this.formProps?.slots || []).length > 0
-            ? this.formProps?.slots?.map((item) => item)
+          {(this.formProps?.renderBtns || []).length > 0
+            ? this.formProps?.renderBtns?.map((item) => item)
             : [
                 <el-button
                   onClick={() => {

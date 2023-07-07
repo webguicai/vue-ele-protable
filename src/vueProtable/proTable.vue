@@ -10,7 +10,8 @@ export default {
     tableData: { default: () => [], required: true }, // 表格数据
     paginationProps: { default: () => ({}), required: true }, // 分页的其他属性都可以往里塞
     proFormData: { default: () => ({}), required: true }, // 绑定form数据
-    protableRef: { default: "" }, // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
+    proTableRef: { default: "" }, // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
+    proFormRef: { default: "" }, // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
     toolbar: { default: () => [], required: false }, // 工具栏，你可以用来渲染按钮
     tableProps: { default: () => ({}), required: false }, // table的其他属性都可以往里塞
     formProps: { default: () => ({}), required: false }, // form的其他属性都可以往里塞
@@ -30,7 +31,16 @@ export default {
         pageSize: 20,
         currentPage: 1,
       },
+      proTableFormRef: {}
     };
+  },
+  watch: {
+    proTableFormRef: {
+      deep: true,
+      handler: function(newVal) {
+        this.$parent[this.proFormRef] = newVal
+      }
+    }
   },
   mounted() {
     const proFormDataInit = {};
@@ -96,6 +106,7 @@ export default {
             ...this.formProps,
           }}
           proFormData={this.proFormData}
+          proFormRef={'proTableFormRef'}
         />
         {/* otherRenders 的 Node */}
         <div class="proTableOtherRenders">{this.otherRenders()}</div>

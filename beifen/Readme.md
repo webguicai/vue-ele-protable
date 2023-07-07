@@ -46,7 +46,7 @@ Vue.use(VueEleProtable);
           @******         el-table自带的所有事件都可以透传获取执行 , 查看element-ui Table Events : [Title](https://element.eleme.cn/#/zh-CN/component/table)
       -->
     <vue-ele-protable
-      protableRef="protableRef" 
+      proTableRef="proTableRef" 
       :tableColumns="tableColumns"
       :tableData="tableData"
       :formProps="{ labelSuffix: ' :' }"
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       loading: false,
-      protableRef: {},
+      proTableRef: {},
       proFormData: {},
       otherRenders: () => {
         return (

@@ -38,7 +38,7 @@ export default {
     proTableFormRef: {
       deep: true,
       handler: function (newVal) {
-        this.$parent[this?.proTableFormRef] = newVal;
+        this.$parent[this?.proFormRef] = newVal;
       },
     },
   },

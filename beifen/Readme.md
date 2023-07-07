@@ -169,10 +169,10 @@ https://raw.githubusercontent.com/webguicai/vue-ele-protable/main/beifen/image.p
 ## 表格配置
 
 ### 具体参数可查看element-ui ，下方罗列部分
-table: Table Attributes  
-  https://element.eleme.cn/#/zh-CN/component/table#table-attributes
-form:  Form Attributes  
-  https://element.eleme.cn/#/zh-CN/component/form#form-attributes
+table: Table Attributes      
+  https://element.eleme.cn/#/zh-CN/component/table#table-attributes        
+form:  Form Attributes       
+  https://element.eleme.cn/#/zh-CN/component/form#form-attributes      
 
 
 | 参数      | 说明                                                                                        | 类型                   | 可选值                 | 默认值 |

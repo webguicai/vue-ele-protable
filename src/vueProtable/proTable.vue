@@ -107,6 +107,7 @@ export default {
           }}
           proFormData={this.proFormData}
           proFormRef={"proTableFormRef"}
+          loading={this.loading}
         />
         {/* otherRenders 的 Node */}
         <div class="proTableOtherRenders">{this.otherRenders()}</div>

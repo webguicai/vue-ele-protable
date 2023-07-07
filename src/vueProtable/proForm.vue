@@ -7,6 +7,7 @@ export default {
     formProps: { default: () => {} },
     proFormData: { default: () => {}, required: true },
     proFormRef: { default: "" },
+    loading: { default: false, type: Boolean }
   },
   data() {
     return {};
@@ -64,6 +65,7 @@ export default {
                   重置
                 </el-button>,
                 <el-button
+                  v-loading={this.loading}
                   type="primary"
                   onClick={() => {
                     this.formProps?.onSearch();

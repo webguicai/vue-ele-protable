@@ -8,5 +8,9 @@
   },
   "keywords": ["vue-ele-protable", "vue2", "vue", "element-ui"],
   "author": "webguicai",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webguicai/vue-ele-protable"
+  }
 }

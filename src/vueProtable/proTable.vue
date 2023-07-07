@@ -38,7 +38,7 @@ export default {
     proTableFormRef: {
       deep: true,
       handler: function (newVal) {
-        this.$parent[this?.proFormRef] = newVal;
+        this.$parent[this?.proTableFormRef] = newVal;
       },
     },
   },
@@ -50,7 +50,7 @@ export default {
     });
     this.formInit = proFormDataInit;
     this.$emit("formChange", { ...proFormDataInit, ...this.proFormData });
-    this.$parent[this?.protableRef] = this.$refs.elTable;
+    this.$parent[this?.proTableRef] = this.$refs.elTable;
   },
   methods: {
     formChange(v) {

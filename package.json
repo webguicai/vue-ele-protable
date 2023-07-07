@@ -3,23 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "probuild": "vue-cli-service build --target lib ./src/vueProtable/index.js --dest vue-ele-protable --name vueProtable"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "core-js": "^3.31.0",
+    "element-ui": "^2.15.13",
+    "lodash": "^4.17.21",
+    "vue": "^2.7.14"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@babel/eslint-parser": "^7.22.5",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "vue-template-compiler": "^2.6.14"
+    "sass": "^1.63.6",
+    "sass-loader": "^12.6.0",
+    "vue-template-compiler": "^2.7.14"
   },
   "eslintConfig": {
     "root": true,

@@ -1,12 +1,16 @@
-### 作用：生成一个中后台常见的搜索页面，根据tableColumns直接生成searchForm table pagination
-
+## 作用：
+#### 生成一个中后台常见的搜索页面，根据tableColumns直接生成searchForm table pagination
 
 
 
 ## 安装:
 
 ```javascript
+// npm
 npm i vue-ele-protable -D
+
+//yarn 
+yarn add vue-ele-protable
 
 ```
 
@@ -156,7 +160,8 @@ export default {
 
 ```
 ## 预览效果
- ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+
+ ![image](![https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg](https://raw.githubusercontent.com/webguicai/vue-ele-protable/main/beifen/image.png))
 
 ## 表格配置
 

@@ -31,16 +31,16 @@ export default {
         pageSize: 20,
         currentPage: 1,
       },
-      proTableFormRef: {}
+      proTableFormRef: {},
     };
   },
   watch: {
     proTableFormRef: {
       deep: true,
-      handler: function(newVal) {
-        this.$parent[this.proFormRef] = newVal
-      }
-    }
+      handler: function (newVal) {
+        this.$parent[this?.proFormRef] = newVal;
+      },
+    },
   },
   mounted() {
     const proFormDataInit = {};
@@ -106,7 +106,7 @@ export default {
             ...this.formProps,
           }}
           proFormData={this.proFormData}
-          proFormRef={'proTableFormRef'}
+          proFormRef={"proTableFormRef"}
         />
         {/* otherRenders 的 Node */}
         <div class="proTableOtherRenders">{this.otherRenders()}</div>

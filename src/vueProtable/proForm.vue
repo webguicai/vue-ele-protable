@@ -1,18 +1,18 @@
 <script>
 export default {
-  name: 'pro-form',
+  name: "pro-form",
   props: {
     searchItem: { default: () => [] },
     labelWidth: { default: "144px" },
     formProps: { default: () => {} },
     proFormData: { default: () => {}, required: true },
-    proFormRef: { default: '' }
+    proFormRef: { default: "" },
   },
   data() {
     return {};
   },
   mounted() {
-    this.$parent[proFormRef] = this.$refs.elForm;
+    this.$parent[this?.proFormRef] = this.$refs.elForm;
   },
   render() {
     return (

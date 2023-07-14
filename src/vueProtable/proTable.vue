@@ -111,17 +111,19 @@ export default {
         />
         {/* otherRenders 的 Node */}
         <div class="proTableOtherRenders">{this.otherRenders()}</div>
-        {Object.keys(this.toolbar).length > 0 ? <div class="proTableToolbar">
-          <div class="proTableToolbar-left">
-            {this.toolbar?.left?.map((item) => item)}
+        {Object.keys(this.toolbar).length > 0 ? (
+          <div class="proTableToolbar">
+            <div class="proTableToolbar-left">
+              {this.toolbar?.left?.map((item) => item)}
+            </div>
+            <div class="proTableToolbar-right">
+              {this.toolbar?.right?.map((item) => item)}
+            </div>
           </div>
-          <div class="proTableToolbar-right">
-            {this.toolbar?.right?.map((item) => item)}
-          </div>
-        </div> : undefined}
-        <div class="protable">
-          {/* table 的 Node */}
-          {this.customTableFun(
+        ) : undefined}
+        {/* table 的 Node */}
+        {this.customTableFun(
+          <div class="protable">
             <el-table
               data={this.tableData}
               attrs={{ style: "margin: 48px 0;", ...this.tableProps }}
@@ -131,36 +133,36 @@ export default {
             >
               {this.renderFun(this.tableColumns)}
             </el-table>
-          )}
-          {/* table 的 Node */}
-          {this.tableData.length === 0 && !this.loading ? (
-            <el-empty description="暂无数据" image-size={100}></el-empty>
-          ) : undefined}
-          <proPagination
-            style="margin-top: 16px"
-            pagination={{
-              currentChange: (val) => {
-                this.pagination = { ...this.pagination, currentPage: val };
+            {/* table 的 Node */}
+            {this.tableData.length === 0 && !this.loading ? (
+              <el-empty description="暂无数据" image-size={100}></el-empty>
+            ) : undefined}
+            <proPagination
+              style="margin-top: 16px"
+              pagination={{
+                currentChange: (val) => {
+                  this.pagination = { ...this.pagination, currentPage: val };
+                  if (this.paginationProps.currentChange)
+                    this.paginationProps.currentChange(val);
+                  this.onSearch();
+                },
+                sizeChange: (val) => {
+                  this.pagination = { ...this.pagination, pageSize: val };
+                  if (this.paginationProps.sizeChange)
+                    this.paginationProps.sizeChange(val);
+                  this.onSearch();
+                },
+                ...this.pagination,
+                ...this.paginationProps,
+              }}
+              resetPagination={() => {
+                this.pagination = { ...this.pagination, currentPage: 1 };
                 if (this.paginationProps.currentChange)
-                  this.paginationProps.currentChange(val);
-                this.onSearch();
-              },
-              sizeChange: (val) => {
-                this.pagination = { ...this.pagination, pageSize: val };
-                if (this.paginationProps.sizeChange)
-                  this.paginationProps.sizeChange(val);
-                this.onSearch();
-              },
-              ...this.pagination,
-              ...this.paginationProps,
-            }}
-            resetPagination={() => {
-              this.pagination = { ...this.pagination, currentPage: 1 };
-              if (this.paginationProps.currentChange)
-                this.paginationProps.currentChange(1);
-            }}
-          />
-        </div>
+                  this.paginationProps.currentChange(1);
+              }}
+            />
+          </div>
+        )}
       </div>
     );
   },

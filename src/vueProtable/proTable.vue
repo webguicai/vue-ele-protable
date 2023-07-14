@@ -96,7 +96,7 @@ export default {
       ...this.$listeners,
     };
     return (
-      <div style={{ width: "100%", padding: "20px" }}>
+      <div style={{ width: "100%" }}>
         {/* seach的Node */}
         <proForm
           searchItem={this.tableColumns}
@@ -119,46 +119,48 @@ export default {
             {this.toolbar?.right?.map((item) => item)}
           </div>
         </div>
-        {/* table 的 Node */}
-        {this.customTableFun(
-          <el-table
-            data={this.tableData}
-            attrs={{ style: "margin: 48px 0;", ...this.tableProps }}
-            ref="elTable"
-            v-loading={this.loading}
-            {...{ on }}
-          >
-            {this.renderFun(this.tableColumns)}
-          </el-table>
-        )}
-        {/* table 的 Node */}
-        {this.tableData.length === 0 && !this.loading ? (
-          <el-empty description="暂无数据" image-size={100}></el-empty>
-        ) : undefined}
-        <proPagination
-          style="margin-top: 16px"
-          pagination={{
-            currentChange: (val) => {
-              this.pagination = { ...this.pagination, currentPage: val };
+        <div class="protable">
+          {/* table 的 Node */}
+          {this.customTableFun(
+            <el-table
+              data={this.tableData}
+              attrs={{ style: "margin: 48px 0;", ...this.tableProps }}
+              ref="elTable"
+              v-loading={this.loading}
+              {...{ on }}
+            >
+              {this.renderFun(this.tableColumns)}
+            </el-table>
+          )}
+          {/* table 的 Node */}
+          {this.tableData.length === 0 && !this.loading ? (
+            <el-empty description="暂无数据" image-size={100}></el-empty>
+          ) : undefined}
+          <proPagination
+            style="margin-top: 16px"
+            pagination={{
+              currentChange: (val) => {
+                this.pagination = { ...this.pagination, currentPage: val };
+                if (this.paginationProps.currentChange)
+                  this.paginationProps.currentChange(val);
+                this.onSearch();
+              },
+              sizeChange: (val) => {
+                this.pagination = { ...this.pagination, pageSize: val };
+                if (this.paginationProps.sizeChange)
+                  this.paginationProps.sizeChange(val);
+                this.onSearch();
+              },
+              ...this.pagination,
+              ...this.paginationProps,
+            }}
+            resetPagination={() => {
+              this.pagination = { ...this.pagination, currentPage: 1 };
               if (this.paginationProps.currentChange)
-                this.paginationProps.currentChange(val);
-              this.onSearch();
-            },
-            sizeChange: (val) => {
-              this.pagination = { ...this.pagination, pageSize: val };
-              if (this.paginationProps.sizeChange)
-                this.paginationProps.sizeChange(val);
-              this.onSearch();
-            },
-            ...this.pagination,
-            ...this.paginationProps,
-          }}
-          resetPagination={() => {
-            this.pagination = { ...this.pagination, currentPage: 1 };
-            if (this.paginationProps.currentChange)
-              this.paginationProps.currentChange(1);
-          }}
-        />
+                this.paginationProps.currentChange(1);
+            }}
+          />
+        </div>
       </div>
     );
   },
@@ -166,6 +168,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 ::v-deep .el-table {
+  margin-top: 0 !important;
   ::-webkit-scrollbar {
     width: 6px !important;
     height: 6px !important;
@@ -189,12 +192,20 @@ export default {
   }
 }
 .proTableOtherRenders {
-  margin: 24px 0;
+  background-color: #fff;
+  padding: 20px 20px 0;
+  margin-top: 20px;
 }
 .proTableToolbar {
-  margin: 24px 0;
+  background-color: #fff;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
+}
+.protable {
+  background-color: #fff;
+  padding: 0px 20px 20px;
 }
 </style>

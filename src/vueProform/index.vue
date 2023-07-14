@@ -20,7 +20,7 @@ export default {
       <el-form
         value={this.proFormData}
         inline={true}
-        class="proform"
+        class="demo-form-inline"
         label-width={this.labelWidth}
         ref="elForm"
         attrs={{ ...this.formProps }}
@@ -83,10 +83,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.proform {
-  background-color: #fff;
-  padding: 22px 22px 0;
-}
 ::v-deep .el-form-item {
   margin-right: 0px;
   width: 25%;

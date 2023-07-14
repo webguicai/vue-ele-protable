@@ -110,7 +110,9 @@ export default {
           loading={this.loading}
         />
         {/* otherRenders 的 Node */}
-        <div class="proTableOtherRenders">{this.otherRenders()}</div>
+        {this.otherRenders() ? (
+          <div class="proTableOtherRenders">{this.otherRenders()}</div>
+        ) : undefined}
         {Object.keys(this.toolbar).length > 0 ? (
           <div class="proTableToolbar">
             <div class="proTableToolbar-left">
@@ -171,6 +173,7 @@ export default {
 <style lang="scss" scoped>
 ::v-deep .el-table {
   margin-top: 0 !important;
+  padding-top: 20px;
   ::-webkit-scrollbar {
     width: 6px !important;
     height: 6px !important;
@@ -194,6 +197,7 @@ export default {
   }
 }
 .proTableOtherRenders {
+  background-color: #fff;
   padding: 20px 20px 0;
 }
 .proTableToolbar {
@@ -202,7 +206,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px 0;
 }
 .protable {
   background-color: #fff;

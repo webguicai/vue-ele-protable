@@ -86,6 +86,7 @@ export default {
 .proform {
   background-color: #fff;
   padding: 22px 22px 0;
+  margin-bottom: 20px;
 }
 ::v-deep .el-form-item {
   margin-right: 0px;

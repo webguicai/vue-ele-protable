@@ -11518,7 +11518,7 @@ var lodash = __webpack_require__(1579);
     },
     // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
     toolbar: {
-      default: () => [],
+      default: () => ({}),
       required: false
     },
     // 工具栏，你可以用来渲染按钮
@@ -11646,13 +11646,13 @@ var lodash = __webpack_require__(1579);
       }
     }), h("div", {
       "class": "proTableOtherRenders"
-    }, [this.otherRenders()]), h("div", {
+    }, [this.otherRenders()]), Object.keys(this.toolbar).length > 0 ? h("div", {
       "class": "proTableToolbar"
     }, [h("div", {
       "class": "proTableToolbar-left"
     }, [this.toolbar?.left?.map(item => item)]), h("div", {
       "class": "proTableToolbar-right"
-    }, [this.toolbar?.right?.map(item => item)])]), h("div", {
+    }, [this.toolbar?.right?.map(item => item)])]) : undefined, h("div", {
       "class": "protable"
     }, [this.customTableFun(h("el-table", helper_default()([{
       "attrs": {
@@ -11713,10 +11713,10 @@ var lodash = __webpack_require__(1579);
 });
 ;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue?vue&type=script&lang=js&
  /* harmony default export */ var vueProtable_proTablevue_type_script_lang_js_ = (proTablevue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proTable.vue?vue&type=style&index=0&id=89bd8a90&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/vueProtable/proTable.vue?vue&type=style&index=0&id=074af786&prod&lang=scss&scoped=true&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue?vue&type=style&index=0&id=89bd8a90&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue?vue&type=style&index=0&id=074af786&prod&lang=scss&scoped=true&
 
 ;// CONCATENATED MODULE: ./src/vueProtable/proTable.vue
 var proTable_render, proTable_staticRenderFns
@@ -11733,7 +11733,7 @@ var proTable_component = normalizeComponent(
   proTable_staticRenderFns,
   false,
   null,
-  "89bd8a90",
+  "074af786",
   null
   
 )

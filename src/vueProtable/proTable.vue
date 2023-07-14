@@ -12,7 +12,7 @@ export default {
     proFormData: { default: () => ({}), required: true }, // 绑定form数据
     proTableRef: { default: "" }, // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
     proFormRef: { default: "" }, // 绑定父级 data 中的 ref,注意传入string，是 data 中你第一的那个key的string类型
-    toolbar: { default: () => [], required: false }, // 工具栏，你可以用来渲染按钮
+    toolbar: { default: () => ({}), required: false }, // 工具栏，你可以用来渲染按钮
     tableProps: { default: () => ({}), required: false }, // table的其他属性都可以往里塞
     formProps: { default: () => ({}), required: false }, // form的其他属性都可以往里塞
     otherRenders: { default: () => () => {}, required: false }, // 其他渲染，位于 toolbar 和 form 之间，可用来渲染title,tabs等
@@ -111,14 +111,14 @@ export default {
         />
         {/* otherRenders 的 Node */}
         <div class="proTableOtherRenders">{this.otherRenders()}</div>
-        <div class="proTableToolbar">
+        {Object.keys(this.toolbar).length > 0 ? <div class="proTableToolbar">
           <div class="proTableToolbar-left">
             {this.toolbar?.left?.map((item) => item)}
           </div>
           <div class="proTableToolbar-right">
             {this.toolbar?.right?.map((item) => item)}
           </div>
-        </div>
+        </div> : undefined}
         <div class="protable">
           {/* table 的 Node */}
           {this.customTableFun(
@@ -192,9 +192,7 @@ export default {
   }
 }
 .proTableOtherRenders {
-  background-color: #fff;
   padding: 20px 20px 0;
-  margin-top: 20px;
 }
 .proTableToolbar {
   background-color: #fff;

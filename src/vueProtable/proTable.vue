@@ -173,7 +173,6 @@ export default {
 <style lang="scss" scoped>
 ::v-deep .el-table {
   margin-top: 0 !important;
-  padding-top: 20px;
   ::-webkit-scrollbar {
     width: 6px !important;
     height: 6px !important;
@@ -210,6 +209,6 @@ export default {
 }
 .protable {
   background-color: #fff;
-  padding: 0px 20px 20px;
+  padding: 20px;
 }
 </style>
